@@ -19,14 +19,19 @@ function changeColor() {
     return color;
 }
 
+function clear() {
+    container.innerHTML = "";
+}
 
 const smallButton = document.getElementById("small");
 const mediumButton = document.getElementById("medium");
 const largeButton = document.getElementById("large");
+const clearButton = document.getElementById("clear");
 const container = document.querySelector("#container");
 smallButton.addEventListener("click", () => {createTiles(8)});
 mediumButton.addEventListener("click", () => {createTiles(16)});
 largeButton.addEventListener("click", () => {createTiles(24)});
+clearButton.addEventListener("click", () => {clear()});
 container.addEventListener("mouseover", event => {
     event.target.style.backgroundColor = changeColor();
 });
