@@ -1,8 +1,11 @@
 function createTiles(size) {
+    let parent = document.getElementById("container");
+    let tileWidth = parent.offsetWidth / size + "px";
     for (let i=0; i<size*size; i++) {
         let newDiv = document.createElement("div");
-        let parent = document.getElementById("container");
         newDiv.className = "tile";
+        newDiv.style.width = tileWidth;
+        newDiv.style.height = tileWidth;
         parent.appendChild(newDiv);
     }
 }
@@ -16,8 +19,8 @@ function changeColor() {
     return color;
 }
 
-createTiles(25);
+createTiles(8);
 const container = document.querySelector("#container");
-container.addEventListener("click", event => {
+container.addEventListener("mouseover", event => {
     event.target.style.backgroundColor = changeColor();
 });
